@@ -16,12 +16,19 @@ export const monnifyCheckout = ({
     throw new Error('Unable to launch checkout');
   }
 
-  let errors: string[] = [];
+  const errors: string[] = [];
 
-  !apiKey ? errors.push(Errors.ApiKey) : errors.splice(errors.indexOf(Errors.ApiKey), 1);
-  !contractCode
-    ? errors.push(Errors.ContractCode)
-    : errors.splice(errors.indexOf(Errors.ContractCode), 1);
+  if (!apiKey) {
+    errors.push(Errors.ApiKey);
+  } else {
+    errors.splice(errors.indexOf(Errors.ApiKey), 1);
+  }
+
+  if (!contractCode) {
+    errors.push(Errors.ContractCode);
+  } else {
+    errors.splice(errors.indexOf(Errors.ContractCode), 1);
+  }
 
   if (errors.length > 0) {
     return new Error(`${errors.join(', ')} is invalid`);

@@ -11,7 +11,9 @@
   "scripts": {
     "build": "rm -rf dist && rollup -c --bundleConfigAsCjs",
     "prepublishOnly": "npm run build",
-    "format": "prettier --write '**/**/*.{js,}'"
+    "format": "prettier --write '**/**/*.{js,}'",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix"
   },
   "repository": {
     "type": "git",
@@ -47,6 +49,9 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@types/react": "^19.0.8",
     "babel-eslint": "^10.1.0",
+    "eslint": "^9.19.0",
+    "eslint-plugin-jest": "^28.11.0",
+    "eslint-plugin-react": "^7.37.4",
     "prettier": "^3.4.2",
     "rollup": "^4.32.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
