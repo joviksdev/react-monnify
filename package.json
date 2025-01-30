@@ -1,55 +1,56 @@
 {
-	"name": "react-monnify",
-	"version": "1.0.0",
-	"description": "This is an reactJS library for implementing Monnify payment gateway",
-	"main": "dist/index.cjs.js",
-	"module": "dist/index.esm.js",
-	"types": "dist/index.d.ts",
-	"files": [
-		"dist"
-	],
-	"scripts": {
-		"build": "rollup -c",
-		"prepublishOnly": "npm run build"
-	},
-	"repository": {
-		"type": "git",
-		"url": ""
-	},
-	"bugs": {
-		"url": ""
-	},
-	"homepage": "",
-	"keywords": [
-		"Javascript",
-		"github",
-		"ReactJS",
-		"Open Source",
-		"payments",
-		"Monnify",
-		"Gateway"
-	],
-	"author": "Emmanuel Tochukwu <to.emmanuel93@gmail.com>",
-	"license": "MIT",
-	"dependencies": {
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0"
-	},
-	"devDependencies": {
-		"@babel/core": "^7.26.7",
-		"@babel/preset-env": "^7.26.7",
-		"@babel/preset-typescript": "^7.26.0",
-		"@eslint/js": "^9.19.0",
-		"@rollup/plugin-babel": "^6.0.4",
-		"@rollup/plugin-commonjs": "^28.0.2",
-		"@rollup/plugin-node-resolve": "^16.0.0",
-		"@rollup/plugin-terser": "^0.4.4",
-		"@types/react": "^19.0.8",
-		"babel-eslint": "^10.1.0",
-		"prettier": "^3.4.2",
-		"rollup": "^4.32.1",
-		"rollup-plugin-peer-deps-external": "^2.2.4",
-		"typescript": "^5.7.3",
-		"typescript-eslint": "^8.22.0"
-	}
+  "name": "react-monnify",
+  "version": "1.0.0",
+  "description": "This is an reactJS library for implementing Monnify payment gateway",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && rollup -c --bundleConfigAsCjs",
+    "prepublishOnly": "npm run build",
+    "format": "prettier --write '**/**/*.{js,}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "keywords": [
+    "Javascript",
+    "github",
+    "ReactJS",
+    "Open Source",
+    "payments",
+    "Monnify",
+    "Gateway"
+  ],
+  "author": "Emmanuel Tochukwu <to.emmanuel93@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.7",
+    "@babel/preset-env": "^7.26.7",
+    "@babel/preset-typescript": "^7.26.0",
+    "@eslint/js": "^9.19.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/react": "^19.0.8",
+    "babel-eslint": "^10.1.0",
+    "prettier": "^3.4.2",
+    "rollup": "^4.32.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.22.0"
+  }
 }
