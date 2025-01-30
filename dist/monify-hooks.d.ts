@@ -6,4 +6,3 @@ declare const useMonifyCheckout: ({ callbacks, configs, }: {
     initialize: (payload: IMonnifyInitiateProps) => void;
 };
 export default useMonifyCheckout;
-//# sourceMappingURL=monify-hooks.d.ts.map

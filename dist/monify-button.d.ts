@@ -8,4 +8,3 @@ interface Props extends IMonnifyProps {
 }
 declare const MonnifyButton: ({ children, style, className, ...rest }: Props) => React.JSX.Element;
 export default MonnifyButton;
-//# sourceMappingURL=monify-button.d.ts.map

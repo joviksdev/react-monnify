@@ -23,6 +23,7 @@ const useMonifyCheckout = ({
   }, []);
 
   const initialize = (payload: IMonnifyInitiateProps) => {
+    console.log('MONIFY HOOKS::');
     monnifyCheckout({
       ...payload,
       ...configs,

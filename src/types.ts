@@ -10,7 +10,7 @@ export interface IMonnifyProps extends IMonnifyInitiateProps {
 
 export interface IMonnifyInitiateProps {
   amount: number;
-  currency: 'NGN';
+  currency?: 'NGN';
   paymentMethods?: PaymentMethod[];
   reference: string;
   customerFullName: string;

@@ -9,7 +9,7 @@ export interface IMonnifyProps extends IMonnifyInitiateProps {
 }
 export interface IMonnifyInitiateProps {
     amount: number;
-    currency: 'NGN';
+    currency?: 'NGN';
     paymentMethods?: PaymentMethod[];
     reference: string;
     customerFullName: string;
@@ -53,4 +53,3 @@ export interface IMonifyCancelResponse {
     responseMessage: string;
 }
 export {};
-//# sourceMappingURL=types.d.ts.map

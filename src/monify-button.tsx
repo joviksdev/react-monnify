@@ -15,6 +15,7 @@ const MonnifyButton = ({children, style, className, ...rest}: Props) => {
     script.src = 'https://sdk.monnify.com/plugin/monnify.js';
     script.type = 'text/javascript';
     script.async = true;
+    script.id = 'monify-button';
 
     document.body.appendChild(script);
 
@@ -24,6 +25,7 @@ const MonnifyButton = ({children, style, className, ...rest}: Props) => {
   }, []);
 
   const initialize = () => {
+    console.log('Clicking Button---');
     monnifyCheckout(rest);
   };
 
