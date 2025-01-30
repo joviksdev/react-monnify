@@ -1,0 +1,1 @@
+{"version":3,"file":"monify-hooks.d.ts","sourceRoot":"","sources":["../src/monify-hooks.ts"],"names":[],"mappings":"AACA,OAAO,EAAC,iBAAiB,EAAE,cAAc,EAAE,qBAAqB,EAAC,MAAM,SAAS,CAAC;AAGjF,QAAA,MAAM,iBAAiB,4BAGpB;IACD,SAAS,CAAC,EAAE,iBAAiB,CAAC;IAC9B,OAAO,EAAE,cAAc,CAAC;CACzB;0BAc8B,qBAAqB;CASnD,CAAC;AAEF,eAAe,iBAAiB,CAAC"}

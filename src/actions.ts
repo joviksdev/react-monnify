@@ -1,4 +1,4 @@
-import {IMonnifyInitiateProps, IMonnifyProps} from './types';
+import {IMonnifyProps} from './types';
 
 enum Errors {
   ApiKey = 'API key',
@@ -42,8 +42,9 @@ export const monnifyCheckout = ({
   (window as any).MonnifySDK.initialize({
     apiKey,
     contractCode,
-    amount: amount,
+    amount,
     paymentMethods,
     ...payload,
   });
+  return;
 };
