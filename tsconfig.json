@@ -33,5 +33,5 @@
     "forceConsistentCasingInFileNames": true
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist", "**/*.spec.ts", "rollup.config.js", "build"]
+  "exclude": ["node_modules", "dist", "**/*.spec.ts", "rollup.config.js", "build", "example"]
 }
