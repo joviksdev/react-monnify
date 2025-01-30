@@ -52,4 +52,7 @@ export interface IMonifyCancelResponse {
     responseCode: string | 'USER_CANCELLED';
     responseMessage: string;
 }
+export interface MonnifyForwardRef {
+    initialize: (payload: IMonnifyInitiateProps) => void;
+}
 export {};
