@@ -1,4 +1,4 @@
-import {IMonnifyProps} from './types';
+import {IMonifyCancelResponse, IMonnifyProps, IMonnifySuccessResponse} from './types';
 
 enum Errors {
   ApiKey = 'API key',
@@ -16,6 +16,11 @@ export const monnifyCheckout = ({
     console.error('Unable to launch checkout');
     throw new Error('Unable to launch checkout');
   }
+
+  const onLoadStart = payload?.onLoadStart;
+  const onLoadComplete = payload?.onLoadComplete;
+  const onComplete = payload?.onComplete;
+  const onClose = payload?.onClose;
 
   const errors: string[] = [];
 
@@ -35,8 +40,8 @@ export const monnifyCheckout = ({
     console.error(`${errors.join(', ')} is invalid`);
   }
 
-  if (/^\d+(\.\d{1,2})?$/.test(`${amount}`)) {
-    return new Error('Invalid amount');
+  if (!/^\d+(\.\d{1,2})?$/.test(`${amount}`)) {
+    console.error('Invalid amount');
   }
 
   // setDisplay(true);
@@ -45,6 +50,18 @@ export const monnifyCheckout = ({
     contractCode,
     amount,
     paymentMethods,
+    onClose: (data: IMonifyCancelResponse) => {
+      onClose?.(data);
+    },
+    onLoadStart: () => {
+      onLoadStart?.();
+    },
+    onLoadComplete: () => {
+      onLoadComplete?.();
+    },
+    onComplete: (response: IMonnifySuccessResponse) => {
+      onComplete?.(response);
+    },
     ...payload,
   });
   return;

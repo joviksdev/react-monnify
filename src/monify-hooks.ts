@@ -10,11 +10,15 @@ const useMonifyCheckout = ({
   configs: IMonnifyConfig;
 }) => {
   useEffect(() => {
+    if (document.getElementById('monnify-hook')) {
+      document.getElementById('monnify-hook');
+    }
     const script = document.createElement('script');
     script.src = 'https://sdk.monnify.com/plugin/monnify.js';
     script.type = 'text/javascript';
     script.async = true;
 
+    script.id = 'monnify-hook';
     document.body.appendChild(script);
 
     return () => {

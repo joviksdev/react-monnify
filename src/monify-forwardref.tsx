@@ -2,18 +2,26 @@ import {forwardRef, useEffect, useImperativeHandle} from 'react';
 import {IMonnifyInitiateProps, IMonnifyConfig, IMonnifyCallbacks} from './types';
 import {monnifyCheckout} from './actions';
 
-const MonifyForwardRef = (
+export interface MonnifyForwardRef {
+  initialize: (payload: IMonnifyInitiateProps) => void;
+}
+
+const MonnifyCheckout = (
   props: {config: IMonnifyConfig; callbacks: IMonnifyCallbacks},
-  ref: React.Ref<any>,
+  ref: any,
 ) => {
   const config = props.config;
   const callbacks = props.callbacks;
 
   useEffect(() => {
+    if (document.getElementById('monnify-forwardref')) {
+      document.getElementById('monnify-forwardref');
+    }
     const script = document.createElement('script');
     script.src = 'https://sdk.monnify.com/plugin/monnify.js';
     script.type = 'text/javascript';
     script.async = true;
+    script.id = 'monnify-forward';
 
     document.body.appendChild(script);
 
@@ -39,4 +47,4 @@ const MonifyForwardRef = (
   return null;
 };
 
-export default forwardRef(MonifyForwardRef);
+export default forwardRef(MonnifyCheckout);

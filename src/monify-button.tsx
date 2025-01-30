@@ -11,6 +11,9 @@ interface Props extends IMonnifyProps {
 
 const MonnifyButton = ({children, style, className, ...rest}: Props) => {
   useEffect(() => {
+    if (document.getElementById('monnify-button')) {
+      document.getElementById('monnify-button');
+    }
     const script = document.createElement('script');
     script.src = 'https://sdk.monnify.com/plugin/monnify.js';
     script.type = 'text/javascript';
@@ -25,7 +28,6 @@ const MonnifyButton = ({children, style, className, ...rest}: Props) => {
   }, []);
 
   const initialize = () => {
-    console.log('Clicking Button---');
     monnifyCheckout(rest);
   };
 
