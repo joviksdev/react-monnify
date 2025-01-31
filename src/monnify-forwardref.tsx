@@ -2,22 +2,16 @@ import {forwardRef, useEffect, useImperativeHandle} from 'react';
 import {IMonnifyInitiateProps, IMonnifyConfig, IMonnifyCallbacks} from './types';
 import {monnifyCheckout} from './actions';
 
-// ✅ Define the ref interface correctly
 export interface MonnifyForwardRef {
   initialize: (payload: IMonnifyInitiateProps) => void;
 }
 
-// ✅ Define the component props
 interface MonnifyProps {
   config: IMonnifyConfig;
   callbacks: IMonnifyCallbacks;
 }
 
-// ✅ Fix: Explicitly type `forwardRef`
-const MonnifyCheckout = forwardRef<MonnifyForwardRef, MonnifyProps>(function MonnifyCheckout(
-  {config, callbacks},
-  ref,
-) {
+const MonnifyCheckout = ({config, callbacks}: MonnifyProps, ref: any) => {
   useEffect(() => {
     if (document.getElementById('monnify-forwardref')) {
       document.getElementById('monnify-forwardref');
@@ -47,9 +41,9 @@ const MonnifyCheckout = forwardRef<MonnifyForwardRef, MonnifyProps>(function Mon
   }));
 
   return null; // This component doesn't render anything
-});
+};
 
 // ✅ Fix ESLint warning: Add a display name
 MonnifyCheckout.displayName = 'MonnifyCheckout';
 
-export default MonnifyCheckout;
+export default forwardRef<MonnifyForwardRef, MonnifyProps>(MonnifyCheckout);

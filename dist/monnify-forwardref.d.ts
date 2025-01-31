@@ -2,9 +2,9 @@ import { IMonnifyInitiateProps, IMonnifyConfig, IMonnifyCallbacks } from './type
 export interface MonnifyForwardRef {
     initialize: (payload: IMonnifyInitiateProps) => void;
 }
-interface MonnifyProps {
+interface MonnifyProps extends React.RefAttributes<MonnifyForwardRef> {
     config: IMonnifyConfig;
     callbacks: IMonnifyCallbacks;
 }
-declare const MonnifyCheckout: import("react").ForwardRefExoticComponent<MonnifyProps & import("react").RefAttributes<MonnifyForwardRef>>;
+declare const MonnifyCheckout: import("react").ForwardRefExoticComponent<Omit<MonnifyProps, "ref"> & import("react").RefAttributes<MonnifyForwardRef>>;
 export default MonnifyCheckout;

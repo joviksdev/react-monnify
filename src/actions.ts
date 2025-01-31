@@ -14,7 +14,7 @@ export const monnifyCheckout = ({
 }: IMonnifyProps) => {
   if (window === undefined) {
     console.error('Unable to launch checkout');
-    throw new Error('Unable to launch checkout');
+    return;
   }
 
   const onLoadStart = payload?.onLoadStart;
@@ -38,10 +38,12 @@ export const monnifyCheckout = ({
 
   if (errors.length > 0) {
     console.error(`${errors.join(', ')} is invalid`);
+    return;
   }
 
   if (!/^\d+(\.\d{1,2})?$/.test(`${amount}`)) {
     console.error('Invalid amount');
+    return;
   }
 
   // setDisplay(true);
