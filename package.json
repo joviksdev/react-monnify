@@ -1,6 +1,6 @@
 {
-  "name": "react-monnify",
-  "version": "1.0.0",
+  "name": "react-monnify-sdk",
+  "version": "1.0.1",
   "description": "This is an reactJS library for implementing Monnify payment gateway",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -17,10 +17,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/joviksdev/react-monnify"
+    "url": "https://github.com/joviksdev/react-monnify-sdk"
   },
   "bugs": {
-    "url": "https://github.com/joviksdev/react-monnify/issues"
+    "url": "https://github.com/joviksdev/react-monnify-sdk/issues"
   },
   "homepage": "",
   "keywords": [
