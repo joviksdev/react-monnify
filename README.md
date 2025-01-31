@@ -1,25 +1,25 @@
 # react-monnify-sdk
 
-This is a react library for implementing monnify payment gateway
+This is a react library for implementing Monnify payment gateway
 
-## Demo
+<!-- ## Demo
 
-![Demo](React_App_01.png?raw=true 'Demo Image')
+![Demo](React_App_01.png?raw=true 'Demo Image') -->
 
 ## Get Started
 
-This React library provides a wrapper to add monnify Payments to your React application
+This React library provides a wrapper to add Monnify Payments to your React application
 
 ### Install
 
 ```sh
-npm install react-monnify --save
+npm install react-monnify-sdk --save
 ```
 
 or with `yarn`
 
 ```sh
-yarn add react-monnify
+yarn add react-monnify-sdk
 ```
 
 ### Usage
@@ -30,7 +30,7 @@ This library can be implemented into any react application in 3 different ways:
 1. Hooks provided by the library, and
 1. button.
 
-The implementations produce the same results.
+Note that The implementations produce the same results.
 
 ### 1. Using the imperative Monnify forward component
 
@@ -42,7 +42,7 @@ import {
 	IMonnifySuccessResponse,
 	MonnifyCheckout,
 	MonnifyForwardRef,
-} from 'react-monnify';
+} from 'react-monnify-sdk';
 import './App.css';
 
 function App() {
@@ -108,7 +108,7 @@ IMonnifyCallbacks,
 IMonnifyConfig,
 IMonnifySuccessResponse,
 useMonnifyCheckout,
-} from 'react-monnify';
+} from 'react-monnify-sdk';
 import './App.css';
 
 function App() {
@@ -167,10 +167,10 @@ mode: 'TEST', // TEST or LIVE
 export default App;
 ```
 
-### 2. Using the monnify button
+### 2. Using the Monnify button
 
 ```
-import { IMonnifySuccessResponse, MonnifyButton } from 'react-monnify';
+import { IMonnifySuccessResponse, MonnifyButton } from 'react-monnify-sdk';
 import './App.css';
 
 function App() {
@@ -200,7 +200,7 @@ function App() {
 				console.log('loading has started');
 			}}
 		>
-			Make Payment
+				MAKE PAYMENT
 		</MonnifyButton>
 	);
 }
@@ -215,31 +215,31 @@ If you want to style Monnify button, you have the option to use `className` or `
 
 Common props you may want to specify include:
 
-- amount (Float(required)) - The amount(in Naira) to be paid, minimum is N20
-- customerName (String(required)) - The name of the customer
-- customerEmail (String(required)) - The customer email
-- paymentReference String(required) - A unique string of characters that identifies each transaction
-- paymentDescription (String(required)) - A description of the payment
-- currencyCode (String) - The currency code
-- contractCode String(required) - The merchant contract code
-- paymentMethods (String) - The method of payment collection, one of CARD, ACCOUNT_TRANSFER, USSD, or PHONE_NUMBER
-- incomeSplitConfig List<IncomeSplitConfig> - A way to split payments among subAccounts. IncomeSplitConfig { String subAccountCode; Float feePercentage; Float splitPercentage; Float splitAmount; Boolean feeBearer; }
-- metaData Map<String,Object> - This field can be used to pass extra information from customers
+- **amount `(Float(required))`** :- The amount(in Naira) to be paid, minimum is N20
+- **customerName `(String(required))`** :- The name of the customer
+- **customerEmail `(String(required))`** :- The customer email
+- **paymentReference `String(required)`** :- A unique string of characters that identifies each transaction
+- **paymentDescription `(String(required))`** :- A description of the payment
+- **currencyCode `(String)`** - The currency code
+- **contractCode `String(required)`** :- The merchant contract code
+- **paymentMethods `(String)`** :- The method of payment collection, one of `CARD, ACCOUNT_TRANSFER, USSD, or PHONE_NUMBER`, default to `CARD and ACCOUNT_TRANSFER`
+- **incomeSplitConfig `List<IncomeSplitConfig>`** :- A way to split payments among subAccounts. IncomeSplitConfig `{ String subAccountCode; Float feePercentage; Float splitPercentage; Float splitAmount; Boolean feeBearer; }`
+- **metaData `Map<String,Object>`** :- This field can be used to pass extra information from customers
 
 Please checkout [monnify Documentation](https://developers.monnify.com/docs/collections/one-time-payment) for other available options you can add to the tag
 
 ### Methods
 
-- onLoadStart: () => void;
-- onLoadComplete: () => void;
-- onComplete: (response: IMonnifySuccessResponse) => void;
-- onClose: (data) => void;
+- **onLoadStart**: `() => void`;
+- **onLoadComplete**: `() => void`;
+- **onComplete**: `(response: IMonnifySuccessResponse) => void`;
+- **onClose**: `(data) => void`;
 
 ## Thanks
 
 Why not give the GitHub repo a star? I'd really appreciate the attention! Also, feel free to share the repository link on Twitter or any social media platform. Let's spread the word!
 
-If you like React Monnify, you should [follow me on X](https://x.com/iem_joviks), and [LinkedIn](https://www.linkedin.com/in/emmanuel-j-tochukwu-671447125)!
+If you like React Monnify SDK, you should [follow me on X](https://x.com/iem_joviks), and [LinkedIn](https://www.linkedin.com/in/emmanuel-j-tochukwu-671447125)!
 
 Thanks!
 Emmanuel Tochukwu.

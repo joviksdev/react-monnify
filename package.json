@@ -1,6 +1,6 @@
 {
   "name": "react-monnify-sdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This is an reactJS library for implementing Monnify payment gateway",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -31,7 +31,8 @@
     "Open Source",
     "Payments",
     "Monnify",
-    "Gateway"
+    "Gateway",
+    "SDK"
   ],
   "author": "Emmanuel Tochukwu <to.emmanuel93@gmail.com>",
   "license": "MIT",
