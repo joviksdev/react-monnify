@@ -1,4 +1,4 @@
-# react-monnify
+# react-monnify-sdk
 
 This is a react library for implementing monnify payment gateway
 
@@ -103,48 +103,6 @@ export default App;
 ### 2. Using the monnify hook
 
 ```
-import { IMonnifySuccessResponse, MonnifyButton } from 'react-monnify';
-import './App.css';
-
-function App() {
-	return (
-		<MonnifyButton
-			apiKey='MK_TEST_........'
-			amount={500}
-			customerEmail='to.emmanuel93@gmail.com'
-			contractCode='1234567890'
-			paymentMethods={['ACCOUNT_TRANSFER']}
-			customerFullName='Emmanuel Tochukwu'
-			reference='123456789'
-			paymentDescription='Testing payment description'
-			currency='NGN'
-			onClose={(data) => {
-				//Implement what should happen when the modal is closed here
-				console.log('Payment Close => ', data);
-			}}
-			onComplete={(response: IMonnifySuccessResponse) => {
-				//Implement what happens when the transaction is completed.
-				console.log('Payment Completed => ', response);
-			}}
-			onLoadComplete={() => {
-				console.log('SDK is UP');
-			}}
-			onLoadStart={() => {
-				console.log('loading has started');
-			}}
-		>
-			Make Payment
-		</MonnifyButton>
-	);
-}
-
-export default App;
-
-```
-
-### 3. Using the monnify button
-
-```
 import {
 IMonnifyCallbacks,
 IMonnifyConfig,
@@ -207,6 +165,48 @@ mode: 'TEST', // TEST or LIVE
 }
 
 export default App;
+```
+
+### 2. Using the monnify button
+
+```
+import { IMonnifySuccessResponse, MonnifyButton } from 'react-monnify';
+import './App.css';
+
+function App() {
+	return (
+		<MonnifyButton
+			apiKey='MK_TEST_........'
+			amount={500}
+			customerEmail='to.emmanuel93@gmail.com'
+			contractCode='1234567890'
+			paymentMethods={['ACCOUNT_TRANSFER']}
+			customerFullName='Emmanuel Tochukwu'
+			reference='123456789'
+			paymentDescription='Testing payment description'
+			currency='NGN'
+			onClose={(data) => {
+				//Implement what should happen when the modal is closed here
+				console.log('Payment Close => ', data);
+			}}
+			onComplete={(response: IMonnifySuccessResponse) => {
+				//Implement what happens when the transaction is completed.
+				console.log('Payment Completed => ', response);
+			}}
+			onLoadComplete={() => {
+				console.log('SDK is UP');
+			}}
+			onLoadStart={() => {
+				console.log('loading has started');
+			}}
+		>
+			Make Payment
+		</MonnifyButton>
+	);
+}
+
+export default App;
+
 ```
 
 If you want to style Monnify button, you have the option to use `className` or `style`
